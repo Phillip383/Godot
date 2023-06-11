@@ -850,6 +850,7 @@ void Skeleton3DEditor::_notification(int p_what) {
 			add_theme_constant_override("separation", 0);
 		} break;
 		case NOTIFICATION_THEME_CHANGED: {
+			if (!skeleton_options) { return; }
 			skeleton_options->set_icon(get_theme_icon(SNAME("Skeleton3D"), SNAME("EditorIcons")));
 			edit_mode_button->set_icon(get_theme_icon(SNAME("ToolBoneSelect"), SNAME("EditorIcons")));
 			key_loc_button->set_icon(get_theme_icon(SNAME("KeyPosition"), SNAME("EditorIcons")));
