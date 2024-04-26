@@ -45,6 +45,8 @@
 #include "editor/editor_resource_preview.h"
 #include "editor/editor_settings.h"
 
+// TODO: Add the Asset Drawer functionality to this file, maybe?
+
 EditorFileSystem *EditorFileSystem::singleton = nullptr;
 //the name is the version, to keep compatibility with different versions of Godot
 #define CACHE_FILE_NAME "filesystem_cache8"
