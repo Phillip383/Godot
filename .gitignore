@@ -368,3 +368,6 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.lnk
+/LocalNugetSource
+/MyLoaclNugetSource
+/MyLocalNugetSource
