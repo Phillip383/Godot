@@ -1,0 +1,105 @@
+{
+	"Lists": {
+		"Documentation": {
+			"Godot": {
+				"url": "https://docs.godotengine.org/en/stable/",
+				"icon": "https://docs.godotengine.org/en/stable/_static/docs_logo.svg",
+				"tooltip": "The official Godot documentation. This reference will save your life. You can also access this documentation from within the script section of the editor to view methods and properties available to you right inside the editor. Very helpful!"
+			}
+		},
+		"Template Projects": {
+			"tooltip": "I have compiled a list of useful Templates that can be used as a reference or built upon. You can find many more templates using the asset library built into godot. The asset library also is home to many useful engine plugins.",
+
+			"Projects": [
+				{
+					"url": "https://godotengine.org/asset-library/asset/2201",
+					"icon": "https://raw.githubusercontent.com/AdilDevStuff/2D-Platformer-Starter-Kit/main/Icon.png",
+					"tooltip": "A 2D platformer template."
+				},
+				{
+					"url": "https://godotengine.org/asset-library/asset/3824",
+					"icon": "https://i.imgur.com/xiq6lwy.png",
+					"tooltip": "An example of an inventory system."
+				},
+				{
+					"url": "https://godotengine.org/asset-library/asset/3658",
+					"icon": "https://raw.githubusercontent.com/TheDahoom/FPS-Multiplayer-Template/refs/heads/screenshots/screenshots/icon.png",
+					"tooltip": "An example of implementing Online Multiplayer."
+				},
+				{
+					"url": "https://godotengine.org/asset-library/asset/2268",
+					"icon": "https://i.ibb.co/6t6q2Hr/Screenshot.png",
+					"tooltip": "An example Third Person Controller."
+				},
+				{
+					"url": "https://godotengine.org/asset-library/asset/3243",
+					"icon": "https://raw.githubusercontent.com/alpapaydin/Godot-4-Tower-Defense-Template/master/Assets/preview_stuff/screenshot.png",
+					"tooltip": "An example of a tower defense style game."
+				}
+			]
+		},
+		"Featured Plugins": {
+			"tooltip": "This is a list of highly useful plugins that are answers to many problems in game development that you might have been used to in other engines such as Unity or Unreal Engine.",
+
+			"Plugins": [
+				{
+					"url": "https://godotengine.org/asset-library/asset/3892",
+					"icon": "https://github.com/TokisanGames/Terrain3D/raw/v0.9.3-beta/doc/docs/images/terrain3d.jpg",
+					"tooltip": "This is a masterclass terrain tool."
+				},
+				{
+					"url": "https://godotengine.org/asset-library/asset/3787",
+					"icon": "https://raw.githubusercontent.com/limbonaut/limboai/master/doc/images/logo_and_screenshot.png",
+					"tooltip": "This is a plugin for Behavior trees in Godot. I included a tutorial that covers the use of this plugin."
+				},
+				{
+					"url": "https://godotengine.org/asset-library/asset/3209",
+					"icon": "https://raw.githubusercontent.com/CraterCrash/branding/main/orchestrator/b_pfp_600px_c.png",
+					"tooltip": "Orchestrator is a visual scripting tool much like blueprints in Unreal Engine."
+				},
+				{
+					"url": "https://godotengine.org/asset-library/asset/1572",
+					"icon": "https://raw.githubusercontent.com/viniciusgerevini/godot-aseprite-wizard/godot_4/icon.png",
+					"tooltip": "Aseprite Wizard makes importing sprite animations seamless."
+				},
+				{
+					"url": "https://godotengine.org/asset-library/asset/4027",
+					"icon": "https://gitlab.com/ace24713/stickyscribegodot/-/raw/main/icon.png",
+					"tooltip": "A neat little plugin to help keep track of TODO's and issues in the project."
+				}
+			]
+		},
+		"Tutorials": {
+			"Dodge-The-Creeps": {
+				"url": "https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html",
+				"icon": "https://docs.godotengine.org/en/stable/_images/dodge_preview.gif",
+				"tooltip": "This is an official Godot tutorial, and it is recommended that you follow the step by step guide before tackling this tutorial."
+			},
+			"Dodge-The-Creeps3D": {
+				"url": "https://docs.godotengine.org/en/stable/getting_started/first_3d_game/index.html",
+				"icon": "https://docs.godotengine.org/en/stable/_images/squash-the-creeps-final.gif",
+				"tooltip": "This is a follow up tutorial for the 2D version of the game. It offers a nice introduction to 3D development within Godot."
+			},
+			"GDQuest": {
+				"url": "https://www.gdquest.com/tutorial/godot/",
+				"icon": "https://gdquest.com/tutorial/godot/godot-tutorials-banner.png",
+				"tooltip": "A helpful resource with both free and paid tutorials. The developer has also created an interactive app to learn GDScript."
+			},
+			"Learn-GDScript": {
+				"url": "https://gdquest.itch.io/learn-godot-gdscript",
+				"icon": "https://img.itch.zone/aW1hZ2UvMTM5OTc0MC84MTU4MzQ1LnBuZw==/original/K63lBs.png",
+				"tooltip": "Created by GDQuest, this application is perfect for beginners."
+			},
+			"Godot-Tutorials": {
+				"url": "https://godottutorials.com/",
+				"icon": "https://godottutorials.com/img/homepage/header/godot-header@2x.png",
+				"tooltip": "Not only does this website have free courses, it consists of design principles within Godot, and also has a course on game design. It's all free, so it doesn't hurt to check it out!"
+			},
+			"Godot-For-Beginners": {
+				"url": "https://www.godotforbeginners.com/",
+				"icon": "https://www.godotforbeginners.com/godot-for-beginners.png",
+				"tooltip": "A nice little website, I checked it out and has a great introduction to Behavior Trees and using them in Godot using LimboAI which is a plugin for Godot."
+			}
+		}
+	}
+}

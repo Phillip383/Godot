@@ -30,6 +30,7 @@
 
 #pragma once
 
+#include "editor/project_manager/learn_view.h"
 #include "scene/gui/dialogs.h"
 #include "scene/gui/scroll_container.h"
 
@@ -50,6 +51,7 @@ class QuickSettingsDialog;
 class RichTextLabel;
 class TabContainer;
 class VBoxContainer;
+class LearnView;
 
 class ProjectManager : public Control {
 	GDCLASS(ProjectManager, Control);
@@ -97,6 +99,7 @@ class ProjectManager : public Control {
 	enum MainViewTab {
 		MAIN_VIEW_PROJECTS,
 		MAIN_VIEW_ASSETLIB,
+		MAIN_VIEW_lEARN,
 		MAIN_VIEW_MAX
 	};
 
@@ -113,6 +116,7 @@ class ProjectManager : public Control {
 
 	VBoxContainer *local_projects_vb = nullptr;
 	EditorAssetLibrary *asset_library = nullptr;
+	LearnView *learn_view = nullptr;
 
 	EditorAbout *about_dialog = nullptr;
 

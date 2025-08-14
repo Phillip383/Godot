@@ -44,6 +44,7 @@
 #include "editor/gui/editor_title_bar.h"
 #include "editor/gui/editor_version_button.h"
 #include "editor/project_manager/engine_update_label.h"
+#include "editor/project_manager/learn_view.h"
 #include "editor/project_manager/project_dialog.h"
 #include "editor/project_manager/project_list.h"
 #include "editor/project_manager/project_tag.h"
@@ -64,6 +65,8 @@
 #include "scene/theme/theme_db.h"
 #include "servers/display_server.h"
 #include "servers/navigation_server_3d.h"
+#include "learn_view.h"
+
 
 #ifndef PHYSICS_3D_DISABLED
 #include "servers/physics_server_3d.h"
@@ -1657,6 +1660,13 @@ ProjectManager::ProjectManager() {
 		Button *asset_library_toggle = _add_main_view(MAIN_VIEW_ASSETLIB, TTRC("Asset Library"), Ref<Texture2D>(), asset_library_filler);
 		asset_library_toggle->set_disabled(true);
 		asset_library_toggle->set_tooltip_text(TTRC("Asset Library not available (due to using Web editor, or because SSL support disabled)."));
+	}
+	
+	//TODO: Learn view
+	{
+		learn_view = memnew(LearnView());
+		learn_view->set_name("LearnTab");
+		_add_main_view(MAIN_VIEW_lEARN, TTRC("Learn"), Ref<Texture2D>(), learn_view);
 	}
 
 	// Footer bar.
