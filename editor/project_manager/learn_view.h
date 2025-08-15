@@ -53,7 +53,6 @@ protected:
 
 public:
 	LearnView() {
-		_init_GUI();
 	}
 
 	void _notification(int p_what);

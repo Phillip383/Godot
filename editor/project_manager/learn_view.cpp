@@ -47,17 +47,24 @@
 #include "scene/gui/panel.h"
 #include "scene/gui/panel_container.h"
 #include "scene/gui/scroll_container.h"
+#include "scene/resources/style_box_flat.h"
 
 void LearnView::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("_notification"), &LearnView::_notification);
 }
 
 void LearnView::_notification(int p_what) {
+	switch (p_what) {
+		case NOTIFICATION_ENTER_TREE:
+			_init_GUI();
+			break;
+		case NOTIFICATION_POSTINITIALIZE:
+			break;
+	}
 }
 
 void LearnView::_init_GUI() {
 	main_vb_container = memnew(VBoxContainer());
-	main_vb_container->add_theme_style_override(SceneStringName(panel), get_theme_stylebox(SNAME("Background"), EditorStringName(EditorStyles)));
 	this->add_child(main_vb_container);
 
 	_init_content();
@@ -65,13 +72,13 @@ void LearnView::_init_GUI() {
 	PanelContainer *contents_bg = memnew(PanelContainer);
 	main_vb_container->add_child(contents_bg);
 	contents_bg->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-
-	//add_theme_style_override(SceneStringName(panel), get_theme_stylebox(SceneStringName(panel), SNAME("Tree")));
+	contents_bg->add_theme_style_override(SceneStringName(panel), get_theme_stylebox(SNAME("project_list"), SNAME("ProjectManager")));
 
 	ScrollContainer *contents_scroll = memnew(ScrollContainer);
-	contents_scroll->add_theme_style_override(SceneStringName(panel), get_theme_stylebox(SNAME("Background"), EditorStringName(EditorStyles)));
+
 	contents_scroll->set_horizontal_scroll_mode(ScrollContainer::SCROLL_MODE_DISABLED);
 	contents_scroll->set_vertical_scroll_mode(ScrollContainer::SCROLL_MODE_SHOW_ALWAYS);
+
 	Label *test = memnew(Label);
 	test->set_text("Hello");
 	contents_scroll->add_child(test);
