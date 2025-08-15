@@ -30,12 +30,14 @@
 
 #pragma once
 
+#include "editor/editor_node.h"
 #include "scene/gui/box_container.h"
 #include "scene/gui/panel_container.h"
 #include "scene/gui/scroll_container.h"
 
 class HBoxContainer;
 class Variant;
+class ColorRect;
 
 struct LearnItem {
 	String tooltip = "";
@@ -44,12 +46,20 @@ struct LearnItem {
 };
 
 class LearnView : public PanelContainer {
+	GDCLASS(LearnView, PanelContainer);
+
+protected:
+	static void _bind_methods();
+
 public:
 	LearnView() {
 		_init_GUI();
 	}
 
+	void _notification(int p_what);
+
 private:
+	VBoxContainer *main_container = nullptr;
 	BoxContainer *docs_container = nullptr;
 	HBoxContainer *labels = nullptr;
 	HBoxContainer *lists = nullptr;
@@ -69,6 +79,7 @@ private:
 	void _init_plugins_container();
 	void _init_templates_container();
 
+	ColorRect *_create_background(const Color &color) const;
 	Variant _parse_file_content() const;
 	void _fill_lists(const Variant &content);
 };

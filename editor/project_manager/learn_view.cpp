@@ -29,28 +29,49 @@
 /**************************************************************************/
 
 #include "learn_view.h"
+#include "core/error/error_macros.h"
 #include "core/io/file_access.h"
 #include "core/io/json.h"
+#include "core/math/math_defs.h"
+#include "core/object/class_db.h"
 #include "core/variant/dictionary.h"
 #include "core/variant/variant.h"
+#include "editor/editor_node.h"
 #include "scene/gui/box_container.h"
+#include "scene/gui/color_rect.h"
+#include "scene/gui/control.h"
 #include "scene/gui/label.h"
 #include "scene/gui/scroll_container.h"
 
-void LearnView::_init_GUI() {
-	_init_labels();
+void LearnView::_bind_methods() {
+	ClassDB::bind_method(D_METHOD("_notification"), &LearnView::_notification);
+}
 
+void LearnView::_notification(int p_what) {
+}
+
+void LearnView::_init_GUI() {
+	main_container = memnew(VBoxContainer());
+	this->add_child(main_container);
+
+	_init_labels();
 	docs_container = memnew(BoxContainer());
 	docs_container->set_name("DocsContainer");
 	this->add_child(docs_container);
 
+	_init_lists();
+	_init_templates_container();
+	_init_tuts_container();
+	_init_plugins_container();
 	// const Variant parsed_content = _parse_file_content();
 	// _fill_lists(parsed_content);
 }
 
 void LearnView::_init_labels() {
 	labels = memnew(HBoxContainer());
+	labels->set_alignment(BoxContainer::ALIGNMENT_CENTER);
 	labels->set_name("LabelsContainer");
+	main_container->add_child(labels);
 
 	Label *docs_label = memnew(Label());
 	docs_label->set_text("Documentation");
@@ -68,7 +89,14 @@ void LearnView::_init_labels() {
 	templates_label->set_text("Templates");
 	labels->add_child(templates_label);
 
-	this->add_child(labels);
+	TypedArray<Label> children = labels->get_children();
+	for (Variant &child : children) {
+		Object *obj = child;
+		Label *l = Object::cast_to<Label>(obj);
+		l->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
+		l->set_h_size_flags(SIZE_EXPAND_FILL);
+		l->set_theme_type_variation("MainScreenButton");
+	}
 }
 
 void LearnView::_init_lists() {
@@ -124,4 +152,10 @@ void LearnView::_fill_lists(const Variant &content) {
 		Dictionary dict = content;
 		//TODO: Fill the vector variables with the correct data.
 	}
+}
+
+ColorRect *LearnView::_create_background(const Color &color) const {
+	ColorRect *background = memnew(ColorRect());
+	background->set_color(color);
+	return background;
 }
