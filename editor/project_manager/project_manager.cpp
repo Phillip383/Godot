@@ -52,6 +52,7 @@
 #include "editor/settings/editor_settings.h"
 #include "editor/themes/editor_scale.h"
 #include "editor/themes/editor_theme_manager.h"
+#include "learn_view.h"
 #include "main/main.h"
 #include "scene/gui/check_box.h"
 #include "scene/gui/flow_container.h"
@@ -65,8 +66,6 @@
 #include "scene/theme/theme_db.h"
 #include "servers/display_server.h"
 #include "servers/navigation_server_3d.h"
-#include "learn_view.h"
-
 
 #ifndef PHYSICS_3D_DISABLED
 #include "servers/physics_server_3d.h"
@@ -241,6 +240,7 @@ void ProjectManager::_update_theme(bool p_skip_creation) {
 
 		_set_main_view_icon(MAIN_VIEW_PROJECTS, get_editor_theme_icon(SNAME("ProjectList")));
 		_set_main_view_icon(MAIN_VIEW_ASSETLIB, get_editor_theme_icon(SNAME("AssetLib")));
+		//TODO: Add Learn Icon
 
 		// Project list.
 		{
@@ -1661,7 +1661,7 @@ ProjectManager::ProjectManager() {
 		asset_library_toggle->set_disabled(true);
 		asset_library_toggle->set_tooltip_text(TTRC("Asset Library not available (due to using Web editor, or because SSL support disabled)."));
 	}
-	
+
 	//TODO: Learn view
 	{
 		learn_view = memnew(LearnView());

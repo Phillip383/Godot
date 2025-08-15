@@ -59,13 +59,9 @@ public:
 	void _notification(int p_what);
 
 private:
-	VBoxContainer *main_container = nullptr;
-	BoxContainer *docs_container = nullptr;
-	HBoxContainer *labels = nullptr;
-	HBoxContainer *lists = nullptr;
-	ScrollContainer *tuts_container = nullptr;
-	ScrollContainer *plugins_container = nullptr;
-	ScrollContainer *templates_container = nullptr;
+	Ref<Theme> theme = nullptr;
+	VBoxContainer *main_vb_container = nullptr;
+	HBoxContainer *content_buttons_container = nullptr;
 
 	Vector<LearnItem> docs[1];
 	Vector<LearnItem> tuts[10];
@@ -73,13 +69,12 @@ private:
 	Vector<LearnItem> templates[10];
 
 	void _init_GUI();
-	void _init_labels();
-	void _init_lists();
-	void _init_tuts_container();
-	void _init_plugins_container();
-	void _init_templates_container();
+	void _init_content();
+	void _access_docs();
+	void _init_tuts();
+	void _init_plugins();
+	void _init_templates();
 
-	ColorRect *_create_background(const Color &color) const;
 	Variant _parse_file_content() const;
 	void _fill_lists(const Variant &content);
 };
